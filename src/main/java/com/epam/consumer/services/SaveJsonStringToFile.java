@@ -3,7 +3,6 @@ package com.epam.consumer.services;
 import com.epam.infra.InjectValue;
 import lombok.SneakyThrows;
 
-import java.io.FileWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
