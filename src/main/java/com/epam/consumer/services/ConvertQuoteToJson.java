@@ -20,10 +20,8 @@ public class ConvertQuoteToJson implements ConvertToJson {
         Field[] fields = quote.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
-           // obj.put( field.getName(), field.get(quote).toString());
             String str = field.get(quote).toString();
             obj.put( field.getName(), str);
-            //field.get(quote).toString()) ;
 
         }
 
