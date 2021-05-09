@@ -21,7 +21,7 @@ public class ConvertQuoteToJsonTest {
         String strQuote = converter.convert(quote).trim();
 
         String[] out = strQuote.replaceAll("[{}]", "").split(",");
-        //general test case, text without ","
+        //general test case, text without "," !!!
         for (String s : out) {
             String[] pair = s.replaceAll("\"", "").trim().split(":");
             if (pair[0].trim().equals("id"))
