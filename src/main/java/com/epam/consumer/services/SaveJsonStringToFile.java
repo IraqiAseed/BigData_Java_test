@@ -4,6 +4,10 @@ import com.epam.infra.InjectValue;
 import lombok.SneakyThrows;
 
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class SaveJsonStringToFile implements JsonSaver {
 
@@ -14,9 +18,6 @@ public class SaveJsonStringToFile implements JsonSaver {
     @Override
     public void save(String jsonString,String name) {
         String fileName = locationDir + name + ".json";
-        FileWriter file = new FileWriter(fileName);
-        file.write(jsonString);
-        file.flush();
-        file.close();
+        Files.write(Paths.get(fileName),jsonString.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE);
     }
 }
